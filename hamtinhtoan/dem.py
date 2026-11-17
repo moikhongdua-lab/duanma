@@ -1,1 +1,2 @@
-rget
+n = int(input())
+print(n)
