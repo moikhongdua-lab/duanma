@@ -7,7 +7,7 @@ def in_top_luong(ds):
         top_x = ds_sap_xep[:x]
         print("--- TOP", x, "NHÂN VIÊN LƯƠNG CAO NHẤT ---")
         for ma_nv, thong_tin in top_x:
-            print("Mã NV:", manv, ", Tên:", nv["ten"], ", Lương:", luong["luong"])
+            print("Mã NV:", ma_nv, ", Tên:", thong_tin["ten"], ", Lương:", thong_tin["luong"])
     else:
         print("Số lượng không hợp lệ!")
 in_top_luong(ds)
