@@ -84,15 +84,16 @@ VARCHAR_LEN = {
 # ---------------------------------------------------------------------------
 # 2. CHUẨN HÓA KIỂU + KIỂM TRA KHÓA
 # ---------------------------------------------------------------------------
-def _parse_time(value) -> str | None:
-    """Chuẩn hóa về 'HH:MM:SS'. Chấp nhận 'HH:MM' hoặc 'HH:MM:SS'."""
+def _parse_time(value) :
+    value = str(value) """Chuẩn hóa về 'HH:MM:SS'. Chấp nhận 'HH:MM' hoặc 'HH:MM:SS'."""
     if pd.isna(value):
         return None
-    parts = str(value).strip().split(":")
+    parts = value.strip().split(":")
     if len(parts) not in (2, 3):
         raise ValueError(f"Giờ không hợp lệ: {value!r}")
-    h, m = int(parts[0]), int(parts[1])
-    s = int(parts[2]) if len(parts) == 3 else 0
+    h, m, s = int(parts[0]), int(parts[1]), int(parts[2])
+    if len(parts) == 3 : s = int(parts[2])
+    else : s = 0
     if not (0 <= h < 24 and 0 <= m < 60 and 0 <= s < 60):
         raise ValueError(f"Giờ không hợp lệ: {value!r}")
     return f"{h:02d}:{m:02d}:{s:02d}"
