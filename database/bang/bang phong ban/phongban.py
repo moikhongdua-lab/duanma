@@ -1,4 +1,9 @@
-phongban = { "PHONGBAN": {
+SCHEMA_PHONGBAN = {
+    "PHONGBAN": {
         "cols": {"MaPB": "int", "TenPB": "str", "SDT": "str"},
-        "pk": ["MaPB"], "fk": {},}
+        "pk": ["MaPB"],
+        "fk": {},
+        "notnull": ["TenPB"],
+        "unique": [["TenPB"]],
+    },
 }

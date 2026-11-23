@@ -6,4 +6,4 @@ def dem(cot_nhom, da_gom, cot_dem):
                 tong[gioi_tinh] = 0
             tong[gioi_tinh] += 1
     return tong
-print(dem('luong', da_gom, 'gioitinh'))
+
